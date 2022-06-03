@@ -16,7 +16,7 @@ function getImage(selectedPlace) {
 
     //Fetch the API data, then post the data and update the UI. If there is no image when searching for the city name, then use the country instead.
     getImageFetch(baseURL, imageType, orientation, category, perPage, encodedPlace)
-    .then(function(data) {     
+    .then(function(data) {    
         if(data.hits[0] == undefined) {
             selectedPlace = selectedInfo.country;
             getImage(selectedPlace);
@@ -73,8 +73,6 @@ const updateUIImg = async () => {
     const request = await fetch('http://localhost:8081/getImage');
     try{
         const allData = await request.json();
-        console.log('allData image');
-        console.log(allData);
         const formBg = document.querySelector('.form-bg');
         formBg.style.backgroundImage = `url('${allData.imageUrl}')`;
     } catch (error) {
