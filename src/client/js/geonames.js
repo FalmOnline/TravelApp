@@ -1,5 +1,3 @@
-import { list } from "postcss";
-// import { onChangeValue } from "./listeners";
 import { getLocation, placenameInput, selectedInfo } from "./app";
 
 

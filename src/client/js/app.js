@@ -31,7 +31,7 @@ function getLocation(placenameValue) {
 
 //Pick the date you are leaving
 
-function getWeatherAndImage (e) {
+function getWeatherAndImage(e) {
 	getWeather();
 }
 

@@ -36,7 +36,7 @@ console.log(selectedDateEl);
 selectedDateEl.textContent = formatDate(date);
 selectedDateEl.dataset.value = selectedDate;
 
-function formatDate (d) {
+function formatDate(d) {
     let day = d.getDate();
     let month = d.getMonth();
     let year = d.getFullYear();

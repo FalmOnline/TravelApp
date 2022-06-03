@@ -1,3 +1,4 @@
+
 form {
     display: flex;
     flex-direction: row;
@@ -8,6 +9,8 @@ form {
     margin: 0 auto;
     z-index: 5;
     position: relative;
+
+
 }
 
 .form-bg {
@@ -92,6 +95,10 @@ input[type=text]:focus {
     background-color: #5DFFCF;
     border: none;
     text-transform: uppercase;
+
+    &:hover {
+        background-color: #01CBFE;
+    }
 }
 
 .form-bg .overlay {
