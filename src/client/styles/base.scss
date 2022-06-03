@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
 
 html, input, button, p, span, h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
 }
 
 button {
-    cursor: pointer;
-    border-radius: 30px;
+  cursor: pointer;
+  border-radius: 30px;
 }
 
 input {
-    border: solid 1px #a4a4a4;
-    border-radius: 20px;
+  border: solid 1px #a4a4a4;
+  border-radius: 20px;
 }
 
 :required {
-    background: red;
+  background: red;
 }
 
 h3 {
-    color: white;
+  color: white;
 }

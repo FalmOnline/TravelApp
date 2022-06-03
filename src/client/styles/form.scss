@@ -1,134 +1,133 @@
 
 form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: 5;
-    position: relative;
-
-
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	z-index: 5;
+	position: relative;
 }
 
 .form-bg {
-    background-color:#D8A434;
-    overflow: hidden;
-    position: relative;
-    transition: all 1s ease-in-out;
-    background-position: center;
-    background-size: cover;
-    height: calc(100vh - 96px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	background-color:#D8A434;
+	overflow: hidden;
+	position: relative;
+	transition: all 1s ease-in-out;
+	background-position: center;
+	background-size: cover;
+	height: calc(100vh - 96px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .info {
-    color: white;
-    text-align: center;
-    margin-top: 30px;
-    position: relative;
-    z-index: 2;
+	color: white;
+	text-align: center;
+	margin-top: 30px;
+	position: relative;
+	z-index: 2;
 }
 
 #place, .date-picker, .dates {
-    max-width: 300px;
+	max-width: 300px;
 }
+
 .list-of-places {
-    list-style: none;
-    padding: unset;
-    margin: unset;
-    position: absolute;
-    width: 100%;
-    background-color: white;
-    max-height: 300px;
-    overflow-y: scroll;
-    border-radius: 10px;
-    padding-left: 20px;
-    z-index: 11;
+	list-style: none;
+	padding: unset;
+	margin: unset;
+	position: absolute;
+	width: 100%;
+	background-color: white;
+	max-height: 300px;
+	overflow-y: scroll;
+	border-radius: 10px;
+	padding-left: 20px;
+	z-index: 11;
 }
 
 .list-of-places li {
-    border-top: unset;
-    background-color: white;
+	border-top: unset;
+	background-color: white;
 }
 
 .list-of-places li:hover {
-    background: #f7f7f7;
+	background: #f7f7f7;
 }
 
 .list-of-places button {
-    border: unset;
-    background: unset;
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 0.5em;
+	border: unset;
+	background: unset;
+	display: block;
+	width: 100%;
+	text-align: left;
+	padding: 0.5em;
 }
 
 .form-wrapper {
-    display: inline-block;
-    position: relative;
-    width: 100%;
+	display: inline-block;
+	position: relative;
+	width: 100%;
 }
 
 #placename, #placename:focus-visible, #placename:focus {
-    width: calc(100% - 40px);
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: solid 1px #a4a4a4;
-    margin-bottom: 10px;
+	width: calc(100% - 40px);
+	border-radius: 20px;
+	padding: 10px 20px;
+	border: solid 1px #a4a4a4;
+	margin-bottom: 10px;
 }
 
 input[type=text]:focus {
-    border: solid 1px #a4a4a4;
+	border: solid 1px #a4a4a4;
 }
 
 .btn-submit {
-    margin-top: 30px;
-    padding: 16px 80px;
-    width: 300px;
-    text-align: center;
-    background-color: #5DFFCF;
-    border: none;
-    text-transform: uppercase;
+	margin-top: 30px;
+	padding: 16px 80px;
+	width: 300px;
+	text-align: center;
+	background-color: #5DFFCF;
+	border: none;
+	text-transform: uppercase;
 
-    &:hover {
-        background-color: #01CBFE;
-    }
+	&:hover {
+			background-color: #01CBFE;
+	}
 }
 
 .form-bg .overlay {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    opacity: .3;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	opacity: .3;
 }
 
 .form-bg .overlay.active {
-    display: block;
+	display: block;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 .days-picker {
-    width: 100%;
+	width: 100%;
 }
 
 .days-picker .number-of-days {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

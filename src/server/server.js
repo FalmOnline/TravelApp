@@ -49,27 +49,16 @@ app.get('/apiKeyPixabay', function(req, res) {
 })
 
 
-// Respond with JS object when a GET request is made to the homepage
+// Respond with JS object when a GET request is made
 app.get('/getPlacenames', function (req, res) {
-
-    // console.log('project getPlaces');
-    // console.log(projectData.filteredNames);
-    // res.send(projectData);
     res.json(projectData.filteredNames);
 });
 
 app.get('/getWeather', function (req, res) {
-
-    console.log('project get');
-    console.log(projectData.weatherData);
-    // res.send(projectData);
     res.json(projectData.weatherData);
 });
 
 app.get('/getImage', function (req, res) {
-    console.log('image get');
-    console.log(projectData.imageData);
-    // res.send(projectData.imageData);
     res.json(projectData.imageData);
 });
 
@@ -77,53 +66,34 @@ app.get('/getImage', function (req, res) {
 app.post('/addPlacenames', addPlacename);
 
 function addPlacename(req, res) {
-    //  console.log(req.body);
 
     let filteredNames = req.body;
-
-    // console.log(filteredNames);
-
-
     projectData.filteredNames = filteredNames;
-    // console.log('projectData');
-    // console.log(projectData);
-    res.send(projectData.filteredNames);  // send the updated data back
+
+    // send the updated data back
+    res.send(projectData.filteredNames);  
 }
 
 app.post('/weather', addWeather);
 
 function addWeather(req, res) {
-    //  console.log(req.body);
 
     let weatherData = req.body;
-
-    console.log('weatherData');
-    console.log(weatherData);
-
-
     projectData.weatherData = weatherData;
-    console.log('projectData');
-    res.send(projectData.weatherData);  // send the updated data back
+
+    // send the updated data back
+    res.send(projectData.weatherData);  
 }
 
 app.post('/image', addImage);
 
 function addImage(req, res) {
-    //  console.log(req.body);
-
     let imageData = req.body;
-
-    console.log('imageData');
-    console.log(imageData);
-
-
     projectData.imageData = imageData;
-    console.log('projectData imagedata');
-    res.send(projectData.imageData);  // send the updated data back
+
+    // send the updated data back
+    res.send(projectData.imageData);  
 }
-
-
-
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {

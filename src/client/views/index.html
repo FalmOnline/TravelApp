@@ -3,15 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Travel App</title>
-        <link rel="stylesheet" href="./styles/resets.scss">
-        <link rel="stylesheet" href="./styles/base.scss">
-        <link rel="stylesheet" href="./styles/header.scss">
-        <link rel="stylesheet" href="./styles/form.scss">
-        <link rel="stylesheet" href="./styles/footer.scss">
     </head>
-
     <body>
-
         <header>
             <a href="./index.html">
                 <div class="logo">
@@ -19,15 +12,7 @@
                 </div>
             </a>
         </header>
-
         <main>
-            <!-- <section>
-                <form class="meaning-text" onsubmit="return Client.handleSubmit(event)">
-                    <textarea id="text" type="textarea" name="input" value="" onblur="onBlur()" rows="6" placeholder="Enter the text you want to analyse" required></textarea>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-                <p class="text-info hidden">Please enter a text to analyse.</p>
-            <section> -->
             <section class="form-bg">
                 <div class="overlay"></div>
                 <form action="" autocomplete="off"> 
@@ -36,28 +21,22 @@
                         <div class="form-wrapper">
                             <input id="placename" type="text" placeholder="Type the name of the city">
                         </div>
-
-                      </div>
-                      <div class="date-picker">
+                    </div>
+                    <div class="date-picker">
                         <h3>When do you start your trip?</h3>
                         <div class="selected-date"></div>
-    
                         <div class="dates">
                             <div class="month-selection">
-                                <div class="arrows prev-month">
-                                    &lt; 
-                                </div>
+                                <div class="arrows prev-month">&lt;</div>
                                 <div class="month"></div>
                                 <div class="arrows next-month">&gt;</div>
                             </div>
                             <div class="days"></div>
                         </div>
                     </div>
-
                     <div class="buttons">
                         <button type="submit" class="btn-submit">Plan you trip</button>
                     </div>
-                    <!-- <input id="generate" type="button"> -->
                 </form>
                 <div class="info">
                     <p id="city-country-days"></p>
@@ -65,21 +44,12 @@
                     </div>
                 </div>
             </section>
-
-
-
         </main>
-
         <footer>
             <div class="footer-logo">
-                <!-- Logo -->
+                Plan you dream vacation with us!
             </div>
-        </footer>
-<!--  -->
-            
-    </body>
-</html>
-        
+        </footer> 
         <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
@@ -89,3 +59,6 @@
               });
             }
         </script>
+    </body>
+</html>
+        

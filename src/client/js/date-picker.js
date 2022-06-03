@@ -1,7 +1,7 @@
 
 import { selectedInfo } from './app';
-console.log('---------------- date-picker ---------------------');
 
+/* Global Variables */
 const datePicker = document.querySelector('.date-picker');
 const selectedDateEl = document.querySelector('.selected-date');
 
@@ -11,14 +11,12 @@ const nextMonth = document.querySelector('.next-month');
 const prevMonth = document.querySelector('.prev-month');
 const days = document.querySelector('.days');
 
-
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 let date = new Date();
 let day = date.getDate();
 let month = date.getMonth();
 let year = date.getFullYear();
-
 
 let selectedDate = date;
 let selectedDay = day;
@@ -28,14 +26,10 @@ let selectedYear = year;
 let newMonth = month;
 let newYear = year;
 
-console.log('format date');
-console.log(formatDate(date));
-console.log('selectedDateEl');
-console.log(selectedDateEl);
-
 selectedDateEl.textContent = formatDate(date);
 selectedDateEl.dataset.value = selectedDate;
 
+//Format the date that it is shown in the input day/month/year
 function formatDate(d) {
     let day = d.getDate();
     let month = d.getMonth();
@@ -53,11 +47,12 @@ function formatDate(d) {
     return day + ' / ' + month + ' / ' + year;
 }
 
+//Call the function that will populate the days in the date selector
 populateDates();
 
 monthEl.textContent = `${months[month]} ${year}`;
 
-
+//toggle the active class in order to show or hide the date picker
 function toggleDates(e) {
     dates.classList.toggle('active');
 }
@@ -87,6 +82,7 @@ function populateDates (e) {
 
     let nr_days = 31;
 
+    //months have different number of days
     switch(newMonth) {
         case 1:
             nr_days = 28;
@@ -105,6 +101,7 @@ function populateDates (e) {
             break;
     }
 
+    //create the days
     for (let i = 0; i < nr_days; i++) {
         const dayItem = document.createElement('div');
         dayItem.classList.add('day');
@@ -114,7 +111,8 @@ function populateDates (e) {
             dayItem.classList.add('selected');
         }
 
-        dayItem.addEventListener('click', function(){
+        //select a new date
+        dayItem.addEventListener('click', function() {
 
             selectedDay = (i + 1);
             selectedMonth = newMonth;
@@ -128,8 +126,6 @@ function populateDates (e) {
             selectedInfo.month = ((selectedMonth + 1) > 9) ? selectedMonth + 1 : '0' + (selectedMonth + 1);
             selectedInfo.year = selectedYear;
             selectedInfo.date = selectedDate;
-            console.log('selected info date');
-            console.log(selectedInfo);
 
             populateDates();
         });
@@ -138,10 +134,4 @@ function populateDates (e) {
     }
 }
 
-
 export {datePicker, selectedDateEl, days, date, dates, day, months, month, nextMonth, prevMonth, monthEl, year, selectedDate, toggleDates, goToNextMonth, goToPrevMonth, formatDate, populateDates};
-
-
-
-
-//https://www.youtube.com/watch?v=wY2dao1hJms
