@@ -1,5 +1,7 @@
 import { getLocation, placenameInput, selectedInfo } from "./app";
 
+console.log('-------------------- geonames.js (3) -----------------------');
+
 /* Global Variables */
 const baseURL = 'http://api.geonames.org/searchJSON?q=';
 const username = '&maxRows=20&username=falmonline'; 

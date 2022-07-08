@@ -40,3 +40,4 @@ module.exports = {
 }
 
 //npm install workbox-webpack-plugin --save-dev
+//npm i @apideck/better-ajv-errors

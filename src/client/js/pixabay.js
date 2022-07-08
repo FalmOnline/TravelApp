@@ -1,5 +1,7 @@
 import { selectedInfo } from './app';
 
+console.log('-------------------- pixabay.js (4) -----------------------');
+
 let selectedPlace;
 
 // Create the elements that are necessary in order to fetch the data from the API

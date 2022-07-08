@@ -2,6 +2,9 @@ let selectedInfo = {};
 import { getWeather } from "./weather";
 import { getLocationFetch, updateUIPlaces, baseURL, username, placenameValue, postData } from "./geonames"; 
 
+
+console.log('-------------------- app.js (1) -----------------------');
+
 const placenameInput = document.querySelector('#placename');
 
 // Get location from geonames using the value typed in the input

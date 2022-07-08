@@ -2,6 +2,8 @@ import { onChangeValue, placenameInput } from './geonames';
 import { selectedDateEl, days, nextMonth, prevMonth, toggleDates, goToNextMonth, goToPrevMonth } from './date-picker';
 import { getWeatherAndImage } from './app';
 
+console.log('-------------------- listeners.js (4) -----------------------');
+
 const planTrip = document.querySelector('.btn-submit');
 
 function getInfo(e) {

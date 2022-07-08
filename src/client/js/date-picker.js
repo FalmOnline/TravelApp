@@ -1,9 +1,14 @@
 
 import { selectedInfo } from './app';
 
+console.log('-------------------- date-picker.js (2) -----------------------');
+
+
+
 /* Global Variables */
 const datePicker = document.querySelector('.date-picker');
 const selectedDateEl = document.querySelector('.selected-date');
+console.log('selectedDateEl');
 
 const dates = document.querySelector('.dates');
 const monthEl = document.querySelector('.month');
@@ -26,8 +31,16 @@ let selectedYear = year;
 let newMonth = month;
 let newYear = year;
 
-selectedDateEl.textContent = formatDate(date);
-selectedDateEl.dataset.value = selectedDate;
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    console.log(selectedDateEl);
+    selectedDateEl.textContent = formatDate(date);
+    selectedDateEl.dataset.value = selectedDate;
+});
+
+
 
 //Format the date that it is shown in the input day/month/year
 function formatDate(d) {

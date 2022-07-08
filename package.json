@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "node src/server/server.js",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server  --config webpack.dev.js --open"
@@ -36,6 +36,6 @@
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^4.2.3",
     "webpack-dev-server": "^3.7.2",
-    "workbox-webpack-plugin": "^6.4.2"
+    "workbox-webpack-plugin": "^6.5.3"
   }
 }
