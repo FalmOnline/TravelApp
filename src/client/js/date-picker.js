@@ -1,14 +1,10 @@
 
 import { selectedInfo } from './app';
 
-console.log('-------------------- date-picker.js (2) -----------------------');
-
-
 
 /* Global Variables */
 const datePicker = document.querySelector('.date-picker');
 const selectedDateEl = document.querySelector('.selected-date');
-console.log('selectedDateEl');
 
 const dates = document.querySelector('.dates');
 const monthEl = document.querySelector('.month');
@@ -32,16 +28,6 @@ let newMonth = month;
 let newYear = year;
 
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-    console.log(selectedDateEl);
-    selectedDateEl.textContent = formatDate(date);
-    selectedDateEl.dataset.value = selectedDate;
-});
-
-
-
 //Format the date that it is shown in the input day/month/year
 function formatDate(d) {
     let day = d.getDate();
@@ -60,10 +46,16 @@ function formatDate(d) {
     return day + ' / ' + month + ' / ' + year;
 }
 
-//Call the function that will populate the days in the date selector
-populateDates();
+window.addEventListener('DOMContentLoaded', (event) => {
+    selectedDateEl.textContent = formatDate(date);
+    selectedDateEl.dataset.value = selectedDate;
 
-monthEl.textContent = `${months[month]} ${year}`;
+    //Call the function that will populate the days in the date selector
+    populateDates();
+
+    monthEl.textContent = `${months[month]} ${year}`;
+
+});
 
 //toggle the active class in order to show or hide the date picker
 function toggleDates(e) {
@@ -90,61 +82,66 @@ function goToPrevMonth (e) {
     populateDates();
 }
 
-function populateDates (e) {
-    days.innerHTML = '';
 
-    let nr_days = 31;
+   
 
-    //months have different number of days
-    switch(newMonth) {
-        case 1:
-            nr_days = 28;
-            break;
-        case 3:
-            nr_days = 30;  
-            break;
-        case 5:
-            nr_days = 30;  
-            break;
-        case 8:
-            nr_days = 30;  
-            break;
-        case 10:
-            nr_days = 30;  
-            break;
-    }
-
-    //create the days
-    for (let i = 0; i < nr_days; i++) {
-        const dayItem = document.createElement('div');
-        dayItem.classList.add('day');
-        dayItem.textContent = i + 1;
-
-        if(selectedDay === (i + 1) && selectedYear === year && selectedMonth == month) {
-            dayItem.classList.add('selected');
+    function populateDates (e) {
+        days.innerHTML = '';
+    
+        let nr_days = 31;
+    
+        //months have different number of days
+        switch(newMonth) {
+            case 1:
+                nr_days = 28;
+                break;
+            case 3:
+                nr_days = 30;  
+                break;
+            case 5:
+                nr_days = 30;  
+                break;
+            case 8:
+                nr_days = 30;  
+                break;
+            case 10:
+                nr_days = 30;  
+                break;
         }
-
-        //select a new date
-        dayItem.addEventListener('click', function() {
-
-            selectedDay = (i + 1);
-            selectedMonth = newMonth;
-            selectedYear = newYear;
-            selectedDate = new Date(selectedYear + '-' + (selectedMonth + 1) + '-' + (i + 1));
-
-            selectedDateEl.textContent = formatDate(selectedDate);
-            selectedDateEl.dataset.value = selectedDate;
-
-            selectedInfo.day = (i>8) ? (i + 1) : '0' + (i+1) ;
-            selectedInfo.month = ((selectedMonth + 1) > 9) ? selectedMonth + 1 : '0' + (selectedMonth + 1);
-            selectedInfo.year = selectedYear;
-            selectedInfo.date = selectedDate;
-
-            populateDates();
-        });
-
-        days.appendChild(dayItem);
+    
+        //create the days
+        for (let i = 0; i < nr_days; i++) {
+            const dayItem = document.createElement('div');
+            dayItem.classList.add('day');
+            dayItem.textContent = i + 1;
+    
+            if(selectedDay === (i + 1) && selectedYear === year && selectedMonth == month) {
+                dayItem.classList.add('selected');
+            }
+    
+            //select a new date
+            dayItem.addEventListener('click', function() {
+    
+                selectedDay = (i + 1);
+                selectedMonth = newMonth;
+                selectedYear = newYear;
+                selectedDate = new Date(selectedYear + '-' + (selectedMonth + 1) + '-' + (i + 1));
+    
+                selectedDateEl.textContent = formatDate(selectedDate);
+                selectedDateEl.dataset.value = selectedDate;
+    
+                selectedInfo.day = (i>8) ? (i + 1) : '0' + (i+1) ;
+                selectedInfo.month = ((selectedMonth + 1) > 9) ? selectedMonth + 1 : '0' + (selectedMonth + 1);
+                selectedInfo.year = selectedYear;
+                selectedInfo.date = selectedDate;
+    
+                populateDates();
+            });
+    
+            days.appendChild(dayItem);
+        }
     }
-}
+
+
 
 export {datePicker, selectedDateEl, days, date, dates, day, months, month, nextMonth, prevMonth, monthEl, year, selectedDate, toggleDates, goToNextMonth, goToPrevMonth, formatDate, populateDates};

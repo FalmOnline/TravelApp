@@ -2,7 +2,6 @@ import { date } from './date-picker';
 import { selectedInfo } from './app';
 import { getImage } from './pixabay';
 
-console.log('-------------------- weather.js (5) -----------------------');
 
 /* Global Variables */
 let baseURL, currentTime, mySelectedTime, daysTillTravel;

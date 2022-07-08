@@ -1,6 +1,5 @@
 import { selectedInfo } from './app';
 
-console.log('-------------------- pixabay.js (4) -----------------------');
 
 let selectedPlace;
 

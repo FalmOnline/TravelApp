@@ -1,6 +1,10 @@
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
 
+function forTestingOnTheServer(text) {
+    return text;
+}
+
 var path = require('path')
 const express = require('express')
 var bodyParser = require('body-parser')
@@ -95,9 +99,12 @@ function addImage(req, res) {
     res.send(projectData.imageData);  
 }
 
+
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
 
+
+module.exports = forTestingOnTheServer;
