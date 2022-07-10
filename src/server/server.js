@@ -14,15 +14,15 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const apiKey = {
-    key: `${process.env.API_KEY_GEONAMES}`
+    key: `1105a42b3ce77d392c09d6e3a91a6982`
 }
 
 const apiKeyWeather = {
-    key: `${process.env.API_KEY_WEATHER}`
+    key: `652972586a9b4eafad6a7f3b13274c12`
 }
 
 const apiKeyPixabay = {
-    key: `${process.env.API_KEY_PIXABAY}`
+    key: `26903953-2ae04a9d8106595496ec8b6b0`
 }
 
 const app = express()
